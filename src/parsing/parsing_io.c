@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 14:56:34 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/18 00:07:35 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/18 01:39:21 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,6 @@ void	p_print_map(t_map *map)
 	int	i;
 
 	i = 0;
-	while (map->array[i])
-	{
-		ft_printf("%s\n", map->array[i]);
-		i++;
-	}
+	while (i < map->size_y)
+		ft_printf("%s\n", map->array[i++]);
 }
