@@ -1,25 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parsing_io.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 17:38:19 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/16 15:15:36 by aguiri           ###   ########.fr       */
+/*   Created: 2022/05/16 14:56:34 by aguiri            #+#    #+#             */
+/*   Updated: 2022/05/18 00:07:35 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+int	p_open_file(char *file_name)
 {
-	t_mlx	vars;
+	int	file_fd;
 
-	p_main(argc, argv);
-	vars.mlx = mlx_init();
-	vars.win = mlx_new_window(vars.mlx, 300, 300, "Hello world!");
-	mlx_key_hook(vars.win, event_esc, &vars);
-	mlx_loop(vars.mlx);
-	return (EXIT_SUCCESS);
+	file_fd = open(file_name, O_RDONLY);
+	if (file_fd == -1)
+		error_put_exit();
+	return (file_fd);
+}
+
+void	p_close_file(int file_fd)
+{
+	int	tmp;
+
+	tmp = close(file_fd);
+	if (tmp == -1)
+		error_put_exit();
+}
+
+void	p_print_map(t_map *map)
+{
+	int	i;
+
+	i = 0;
+	while (map->array[i])
+	{
+		ft_printf("%s\n", map->array[i]);
+		i++;
+	}
 }

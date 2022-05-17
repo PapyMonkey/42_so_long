@@ -6,7 +6,7 @@
 #    By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 14:23:25 by aguiri            #+#    #+#              #
-#    Updated: 2022/04/15 23:34:17 by aguiri           ###   ########.fr        #
+#    Updated: 2022/05/17 19:37:11 by aguiri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,15 @@ MLX_PATH			:=	$(LIBS_PATH)/mlx
 
 # ********************************* N A M E S *********************************
 
-SRCS_NAME			:=	main.c
+SRCS_NAME			:=	parsing/args_check.c\
+						parsing/parsing_array.c\
+						parsing/parsing_io.c\
+						parsing/parsing_main.c\
+						parsing/parsing_map_init.c\
+						parsing/parsing_map_size.c\
+						win_management/close.c\
+						errors.c\
+						main.c
 SRCS				:=	$(addprefix $(SRCS_PATH)/, $(SRCS_NAME))
 OBJS 				:=	$(addprefix $(OBJS_PATH)/, $(SRCS_NAME:.c=.o))
 
@@ -85,7 +93,8 @@ $(OBJS_PATH)/%.o: 	$(SRCS_PATH)/%.c $(HDRS_PATH)
 					@$(MKDIR) $(dir $@)
 					@$(ECHO)\
 					$(BLACK)$(DARK)$(ITALIC)"Compiling $<"$(EOC)
-					@$(CC) $(CFLAGS) $(HFLAGS) -o $@ -c $< 
+					@$(CC) $(HFLAGS) -o $@ -c $< 
+#					@$(CC) $(CFLAGS) $(HFLAGS) -o $@ -c $< 
 
 
 $(NAME):			$(OBJS)

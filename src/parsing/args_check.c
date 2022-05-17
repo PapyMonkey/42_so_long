@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   args_check.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 17:38:19 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/16 15:15:36 by aguiri           ###   ########.fr       */
+/*   Created: 2022/05/16 13:29:38 by aguiri            #+#    #+#             */
+/*   Updated: 2022/05/17 17:34:07 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+void	p_args_check(int argc, char **argv)
 {
-	t_mlx	vars;
+	int	len;
 
-	p_main(argc, argv);
-	vars.mlx = mlx_init();
-	vars.win = mlx_new_window(vars.mlx, 300, 300, "Hello world!");
-	mlx_key_hook(vars.win, event_esc, &vars);
-	mlx_loop(vars.mlx);
-	return (EXIT_SUCCESS);
+	if (argc != 2)
+	{
+		ft_printf("Mauvais nombre d'arguments.");
+		exit(EXIT_FAILURE);
+	}
+	len = ft_strlen(argv[1]);
+	if (len < 5)
+		exit(EXIT_FAILURE);
+	if (ft_strncmp(argv[1] + (len - 4), ".ber", 4))
+	{
+		ft_printf("pas bon les frrrr\n");
+		exit(EXIT_FAILURE);
+	}
 }
