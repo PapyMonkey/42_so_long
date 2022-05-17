@@ -55,3 +55,6 @@ dkms.conf
 .*.swp
 .DS_Store
 data/rsc/
+data/map/
+so_long
+compile_commands.json 
