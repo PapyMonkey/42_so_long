@@ -6,7 +6,7 @@
 #    By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 14:23:25 by aguiri            #+#    #+#              #
-#    Updated: 2022/05/17 19:37:11 by aguiri           ###   ########.fr        #
+#    Updated: 2022/05/18 00:41:20 by aguiri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ MLX_PATH			:=	$(LIBS_PATH)/mlx
 
 SRCS_NAME			:=	parsing/args_check.c\
 						parsing/parsing_array.c\
+						parsing/parsing_check.c\
 						parsing/parsing_io.c\
 						parsing/parsing_main.c\
 						parsing/parsing_map_init.c\

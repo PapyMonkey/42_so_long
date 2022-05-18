@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 09:57:48 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/18 00:13:09 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/18 01:24:47 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 # include <stddef.h> // For clang to match 'size_t'
 
-# define MAP_EMPTY 0
-# define MAP_WALL 1
-# define MAP_ITEM C
-# define MAP_EXIT E
-# define MAP_START P
+# define MAP_EMPTY '0'
+# define MAP_WALL '1'
+# define MAP_ITEM 'C'
+# define MAP_EXIT 'E'
+# define MAP_START 'P'
 
 // ****************************************************************************
 // Structures
@@ -32,6 +32,9 @@ typedef struct s_map {
 	size_t	size_y;
 	char	**array;
 	int		*fd;
+	int		nb_item;
+	int		nb_exit;
+	int		nb_start;
 }			t_map;
 
 // ****************************************************************************
@@ -48,6 +51,12 @@ void	p_get_size(t_map *map);
 // Functions - parsing_array.c
 
 void	p_write_array(t_map *map);
+
+// ****************************************************************************
+// Functions - parsing_check.c
+
+void	p_check_wall(t_map *map);
+void	p_check_map_content(t_map *map);
 
 // ****************************************************************************
 // Functions - parsing_io.c
