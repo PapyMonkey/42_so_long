@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_array.c                                    :+:      :+:    :+:   */
+/*   p_array.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 19:19:20 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/18 00:00:05 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 08:40:14 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+/**
+ * @brief Prints custom error code.
+ */
 static void	p_read_error(void)
 {
 	ft_printf("Error: impossible de lire le fichier (GNL)\n");
 	exit(EXIT_FAILURE);
 }
 
+/**
+ * @brief Clone of ft_strdup(), but ends at the first '\n' character.
+ * 		Allocate (with malloc()) sufficient memory for a copy of the
+ * 		string, does the copy, and returns a pointer to it.
+ *
+ * @param src Source string to be copied.
+ * @param len Length of src (until newline '\n').
+ * @return Returns a pointer to the copied string.	
+ * 		If insufficient memory is available, NULL is returned.
+ */
 static char	*p_strdup_newline(char *src, int len)
 {	
 	int		i;
