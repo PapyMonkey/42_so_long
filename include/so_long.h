@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:58:21 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/17 19:03:12 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 05:21:47 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,28 @@
 # include <mlx.h>
 # include "libft.h"
 
+# include "keycodes.h"
 # include "parsing.h"
+# include "player.h"
+# include "sprites.h"
+# include "structures.h"
+# include "win_management.h"
+
+# define PXL_SIZE 32
+# define DEBUG_MODE 0
 
 // ****************************************************************************
-// Structures
+// Functions - Events
 
-typedef struct s_mlx {
-	void	*mlx;
-	void	*win;
-}			t_mlx;
+static void	event_esc(int key, t_mlx *var);
 
-// ****************************************************************************
-// Functions - close.c
+static void	event_move_player(int key, t_mlx *var);
 
-int		event_esc(int key, t_mlx *arg);
+int			event_main(int key, t_mlx *var);
 
 // ****************************************************************************
-// Functions - errors.c
+// Functions
 
-void	error_put_exit(void);
+void		error_put_exit(void);
 
-#endif
+#endif		// ifndef SO_LONG_H

@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close.c                                            :+:      :+:    :+:   */
+/*   pl_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 12:11:31 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/07 07:13:55 by aguiri           ###   ########.fr       */
+/*   Created: 2022/05/23 03:58:54 by aguiri            #+#    #+#             */
+/*   Updated: 2022/05/23 05:27:22 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	event_esc(int key, t_mlx *arg)
+t_player	*pl_init(t_mlx *var)
 {
-	if (key == 53)
-	{
-		mlx_destroy_window(arg->mlx, arg->win);
-		exit(EXIT_SUCCESS);
-	}
-	ft_printf("Key pressed : %d\n", key);
-	return (EXIT_FAILURE);
+	t_player	*player;
+
+	player = malloc(sizeof(t_player));
+	if (!player)
+		error_put_exit();
+	pl_get_pos(player, var);
+	return (player);
 }

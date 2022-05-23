@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_map_init.c                                 :+:      :+:    :+:   */
+/*   img_create.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/16 15:03:32 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 05:28:23 by aguiri           ###   ########.fr       */
+/*   Created: 2022/05/22 17:00:26 by aguiri            #+#    #+#             */
+/*   Updated: 2022/05/23 05:29:48 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	p_map_init(t_map *map, char *file_path)
+t_img	*img_create(t_mlx *var, int width, int height)
 {
-	map->fd = malloc(sizeof(int) * 2);
-	map->fd[0] = p_open_file(file_path);
-	map->fd[1] = p_open_file(file_path);
-	map->nb_item = 0;
-	map->nb_exit = 0;
-	map->nb_start = 0;
-	p_get_size(map);
-	map->array = malloc(sizeof(char *) * map->size_y + 1);
-	map->array[map->size_y] = "\0";
-	p_write_array(map);
+	t_img	*img;
+
+	img = malloc(sizeof(t_img));
+	if (!img)
+		error_put_exit();
+	img->img = mlx_new_image(var->mlx, width, height);
+	img->addr = mlx_get_data_addr(img->img, &(img->bpp), &(img->line_len),
+			&(img->endian));
+	return (img);
 }
