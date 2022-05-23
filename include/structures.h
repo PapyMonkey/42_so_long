@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 04:15:10 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 14:06:24 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 15:07:11 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ typedef struct s_mlx {
 	void		*win;
 	int			win_x;
 	int			win_y;
+	char		*win_name;
 	t_assets	*assets;
 	t_map		*map;
 	t_player	*player;
