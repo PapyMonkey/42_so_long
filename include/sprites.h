@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:44:58 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 13:52:53 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:24:29 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,33 +19,34 @@
 // Functions - sp_background.c
 
 /**
- * @brief Create an image containing the background and put it to the main
- * 		window.
+ * @brief Print the background on all window.
  *
  * @param var Variable containing all the other useful ones.
  */
-void		sp_background(t_mlx *var);
+void		sp_print_background(t_mlx *var, int x, int y);
 
 // ****************************************************************************
-// Functions - sp_background.c
+// Functions - sp_player.c
 
 /**
- * @brief Create an image of the player thanks to his current position and put it
- *		to the main window.
+ * @brief Print the player according to his current position.
  *
  * @param var Variable containing all the other useful ones.
  */
-void		sp_player(t_mlx *var);
+void		sp_print_player(t_mlx *var);
 
 // ****************************************************************************
 // Functions - sp_items.c
 
 /**
- * @brief Load the item sprite(s).
+ * @brief Check if the cursor's current position is on an item.
+ * 		If so, print it.
  *
  * @param var Variable containing all the other useful ones.
+ * @param x x position.
+ * @param y y position.
  */
-void		sp_items(t_mlx *var);
+void		sp_print_items(t_mlx *var, int x, int y);
 
 // ****************************************************************************
 // Functions - sp_init_assets.c
@@ -61,10 +62,12 @@ t_assets	*sp_init_assets(void);
 // Functions - sp_walls.c
 
 /**
- * @brief Load the wall sprite(s).
+ * @brief Check if the cursor's current position is on a wall. If so, print it.
  *
  * @param var Variable containing all the other useful ones.
+ * @param x x position.
+ * @param y y position.
  */
-void		sp_walls(t_mlx *var);
+void		sp_print_walls(t_mlx *var, int x, int y);
 
 #endif // ifndef SRITES_H

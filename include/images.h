@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:57:24 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 09:28:09 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:46:37 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,25 @@
  * @return Image stored in a custom structure.
  */
 t_img	*img_create(t_mlx *var, int width, int height);
+
+// *****************************************************************************
+// Functions - img_load.c
+
+/**
+ * @brief Draw all the images in the window.
+ *
+ * @param var Variable containing all the other useful ones.
+ */
+void	img_draw(t_mlx *var);
+
+// *****************************************************************************
+// Functions - img_load.c
+
+/**
+ * @brief Load all assets and store it in a structure.
+ *
+ * @param var Variable containing all the other useful ones.
+ */
+void	img_load(t_mlx *var);
 
 #endif		// ifndef IMAGES_H

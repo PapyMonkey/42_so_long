@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 04:01:53 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 13:44:28 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:45:10 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	pl_move_up(t_mlx *var)
 		var->map->array[var->player->pos_y][var->player->pos_x] = MAP_START;
 		if (PRINT_MOVES)
 			ft_printf("Nombre de coups : %d\n", ++var->player->nb_moves);
-		sp_player(var);
+		img_draw(var);
 	}
 	if (DEBUG_MODE)
 	{
@@ -41,7 +41,7 @@ void	pl_move_down(t_mlx *var)
 		var->map->array[var->player->pos_y][var->player->pos_x] = MAP_START;
 		if (PRINT_MOVES)
 			ft_printf("Nombre de coups : %d\n", ++var->player->nb_moves);
-		sp_player(var);
+		img_draw(var);
 	}
 	if (DEBUG_MODE)
 	{
@@ -60,7 +60,7 @@ void	pl_move_left(t_mlx *var)
 		var->map->array[var->player->pos_y][var->player->pos_x] = MAP_START;
 		if (PRINT_MOVES)
 			ft_printf("Nombre de coups : %d\n", ++var->player->nb_moves);
-		sp_player(var);
+		img_draw(var);
 	}
 	if (DEBUG_MODE)
 	{
@@ -79,7 +79,7 @@ void	pl_move_right(t_mlx *var)
 		var->map->array[var->player->pos_y][var->player->pos_x] = MAP_START;
 		if (PRINT_MOVES)
 			ft_printf("Nombre de coups : %d\n", ++var->player->nb_moves);
-		sp_player(var);
+		img_draw(var);
 	}
 	if (DEBUG_MODE)
 	{

@@ -6,50 +6,19 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 11:11:47 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 13:45:50 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:28:51 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-/**
- * @brief Check if the cursor's current position is on a collectible item.
- * 		If so, print it.
- *
- * @param var Variable containing all the other useful ones.
- * @param img Variable containing the image to be printed.
- * @param x x position.
- * @param y y position.
- */
-static void	sp_check_items(t_mlx *var, t_img *img, int x, int y)
+void	sp_print_items(t_mlx *var, int x, int y)
 {
 	if (var->map->array[y][x] == MAP_ITEM)
 	{
-		mlx_put_image_to_window(var->mlx, var->win, img,
-			x * PXL_SIZE, y * PXL_SIZE);
+		mlx_put_image_to_window(var->mlx, var->win,
+			var->assets->img_item,
+			x * PXL_SIZE,
+			y * PXL_SIZE);
 	}
-}
-
-void	sp_items(t_mlx *var)
-{
-	t_img	*img;
-	int		img_size;
-	int		x;
-	int		y;
-
-	img_size = PXL_SIZE;
-	img = mlx_xpm_file_to_image(var->mlx,
-			var->assets->item, &img_size, &img_size);
-	y = 0;
-	while (y < var->map->size_y)
-	{
-		x = 0;
-		while (x < var->map->size_x)
-		{
-			sp_check_items(var, img, x, y);
-			x++;
-		}
-		y++;
-	}
-	free(img);
 }
