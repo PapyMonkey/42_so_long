@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 05:46:23 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 05:48:22 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 10:37:06 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	var_init(t_mlx *var, int argc, char **argv)
 {
+	var->assets = sp_init_assets();
 	var->map = p_main(argc, argv);
 	var->mlx = mlx_init();
 	var->win_x = var->map->size_x * PXL_SIZE;
@@ -23,6 +24,7 @@ void	var_init(t_mlx *var, int argc, char **argv)
 
 void	var_free(t_mlx *var)
 {
+	free(var->assets);
 	free(var->map);
 	free(var->player);
 }

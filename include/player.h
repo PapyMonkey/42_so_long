@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 03:52:10 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 09:17:01 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 13:50:58 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,50 @@
 # define PLAYER_H
 
 # include "structures.h"
+
+// ****************************************************************************
+// Functions - pl_check.c
+
+/**
+ * @brief Check if the cursor is poiting on a exit. Return 1 if it, 0 if not.
+ *
+ * @param var Variable containing all the other useful ones.
+ * @param x x position of the cursor.
+ * @param y y position of the cursor.
+ * @return 1 if the cursor is on an exit, 0 if not.
+ */
+int			pl_check_exit(t_mlx *var, int x, int y);
+
+/**
+ * @brief Check if the cursor is poiting on an item. Return 1 if it, 0 if not.
+ *
+ * @param var Variable containing all the other useful ones.
+ * @param x x position of the cursor.
+ * @param y y position of the cursor.
+ * @return 1 if the cursor is on an item, 0 if not.
+ */
+int			pl_check_items(t_mlx *var, int x, int y);
+
+/**
+ * @brief Check if the cursor is poiting on a wall. Return 1 if it, 0 if not.
+ *
+ * @param var Variable containing all the other useful ones.
+ * @param x x position of the cursor.
+ * @param y y position of the cursor.
+ * @return 1 if the cursor is on a wall, 0 if not.
+ */
+int			pl_check_walls(t_mlx *var, int x, int y);
+
+/**
+ * @brief Manages all the player check-related functions. Return 1 if the
+ * 		player can move to the cursor, 0 if not.
+ *
+ * @param var Variable containing all the other useful ones.
+ * @param x x position of the cursor.
+ * @param y y position of the cursor.
+ * @return 1 if the cursor is the player can move to the cursor, 0 if not.
+ */
+int			pl_check_main(t_mlx *var, int x, int y);
 
 // ****************************************************************************
 // Functions - pl_get_pos.c

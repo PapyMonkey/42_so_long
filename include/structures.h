@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 04:15:10 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 09:20:08 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 12:30:32 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,16 @@
 
 // ****************************************************************************
 // Structures
+
+/**
+ * struct s_assets - Contains all the assets' different path.
+ */
+typedef struct s_assets {
+	char	*background;
+	char	*item;
+	char	*player;
+	char	*wall;
+}			t_assets;
 
 /**
  * struct s_img - Contains all the information of a given image.
@@ -48,6 +58,8 @@ typedef struct s_map {
 typedef struct s_player {
 	int		pos_x;
 	int		pos_y;
+	int		inventory;
+	int		nb_moves;
 }			t_player;
 
 /**
@@ -58,6 +70,7 @@ typedef struct s_mlx {
 	void		*win;
 	int			win_x;
 	int			win_y;
+	t_assets	*assets;
 	t_map		*map;
 	t_player	*player;
 }				t_mlx;
