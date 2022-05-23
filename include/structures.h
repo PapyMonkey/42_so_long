@@ -6,19 +6,21 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 04:15:10 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 05:31:09 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 09:20:08 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTURES_H
 # define STRUCTURES_H
 
-// For clang to match 'size_t'
-# include <stddef.h>
+# include <stddef.h>	// For clang to match 'size_t'
 
 // ****************************************************************************
 // Structures
 
+/**
+ * struct s_img - Contains all the information of a given image.
+ */
 typedef struct s_img {
 	void	*img;
 	char	*addr;
@@ -28,7 +30,7 @@ typedef struct s_img {
 }			t_img;
 
 /**
- * \brief   ???
+ * struct s_map - Contains all the information of the parsed map.
  */
 typedef struct s_map {
 	size_t	size_x;
@@ -40,11 +42,17 @@ typedef struct s_map {
 	int		nb_start;
 }			t_map;
 
+/**
+ * struct s_player - Contains all the player's information.
+ */
 typedef struct s_player {
 	int		pos_x;
 	int		pos_y;
 }			t_player;
 
+/**
+ * struct s_mlx - Contains all useful variable. Used in all functions.
+ */
 typedef struct s_mlx {
 	void		*mlx;
 	void		*win;
