@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:58:21 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 14:34:33 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 15:02:36 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void		var_free(t_mlx *var);
 /**
  * @brief Print error code and exit the program.
  */
-void		error_put_exit(void);
+void		err_put_exit(void);
 
 /**
  * @brief Check if all the assets have been loaded correctly.

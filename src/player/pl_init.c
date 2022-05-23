@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 03:58:54 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 12:31:36 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 15:04:54 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_player	*pl_init(t_mlx *var)
 
 	player = malloc(sizeof(t_player));
 	if (!player)
-		error_put_exit();
+		err_put_exit();
 	pl_get_pos(player, var);
 	player->inventory = 0;
 	player->nb_moves = 0;
