@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 09:57:48 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 09:08:30 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 17:34:51 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,5 +127,26 @@ void	p_map_init(t_map *map, char *file_path);
  * @param map Structure holding the parsed map.
  */
 void	p_get_size(t_map *map);
+
+// ****************************************************************************
+// Functions - p_neighbours.c
+
+/**
+ * @brief Checks if the current position has neighbours.
+ *
+ * @param var Variable containing all the other useful ones.
+ * @param x x position.
+ * @param y y position.
+ * @param c Character to compare.
+ * @return 	- "ULF" for [up ; left ; right] neighbours.
+ *			- "UL" for [up ; left] neighbours.
+ *			- "UR" for [up ; right] neighbours.
+ *			- "U" for [up] neighbour.
+ *			- "LR" for [left ; right] neighbours.
+ *			- "L" for [left] neighbour.
+ *			- "R" for [right] neighbour.
+ *			- "S" for [solo] (no neighbour).
+ */
+char	*p_neighbours(t_mlx *var, int x, int y, char c);
 
 #endif

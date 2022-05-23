@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 04:15:10 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 15:07:11 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 18:37:17 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,28 @@ typedef struct s_img {
 }			t_img;
 
 /**
+ * struct s_walls - Contains all the information of the walls sprites.
+ */
+typedef struct s_walls {
+	char	*path_ulr;
+	char	*path_ul;
+	char	*path_ur;
+	char	*path_u;
+	char	*path_lr;
+	char	*path_l;
+	char	*path_r;
+	char	*path_s;
+	t_img	*img_ulr;
+	t_img	*img_ul;
+	t_img	*img_ur;
+	t_img	*img_u;
+	t_img	*img_lr;
+	t_img	*img_l;
+	t_img	*img_r;
+	t_img	*img_s;
+	int		img_size;
+}			t_walls;
+/**
  * struct s_assets - Contains all the assets' different path.
  */
 typedef struct s_assets {
@@ -37,13 +59,12 @@ typedef struct s_assets {
 	char	*path_exit;
 	char	*path_item;
 	char	*path_player;
-	char	*path_wall;
 	t_img	*img_background;
 	t_img	*img_exit;
 	t_img	*img_item;
 	t_img	*img_player;
-	t_img	*img_wall;
 	int		img_size;
+	t_walls	*walls;
 }			t_assets;
 
 /**

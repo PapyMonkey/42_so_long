@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:44:58 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 14:24:29 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 16:18:22 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
  *
  * @param var Variable containing all the other useful ones.
  */
-void		sp_print_background(t_mlx *var, int x, int y);
+void		sp_print_background(t_mlx *var);
 
 // ****************************************************************************
 // Functions - sp_player.c
