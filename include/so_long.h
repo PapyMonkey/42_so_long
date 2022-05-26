@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:58:21 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 17:54:26 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 00:24:55 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 
 # define PXL_SIZE 32
 # define DEBUG_MODE 0
-# define PRINT_MOVES 1
+# define PRINT_MOVES 0
 
 // ****************************************************************************
 // Functions - Events

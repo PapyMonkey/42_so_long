@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 04:15:10 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 18:37:17 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/26 23:16:36 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,40 @@ typedef struct s_walls {
 	t_img	*img_s;
 	int		img_size;
 }			t_walls;
+
+/**
+ * struct s_count - Contains all the informations of the counting module 
+ * 					sprites.
+ */
+typedef struct s_count {
+	char	*path_bg;
+	char	*path_0;
+	char	*path_1;
+	char	*path_2;
+	char	*path_3;
+	char	*path_4;
+	char	*path_5;
+	char	*path_6;
+	char	*path_7;
+	char	*path_8;
+	char	*path_9;
+	t_img	*img_bg;
+	t_img	*img_0;
+	t_img	*img_1;
+	t_img	*img_2;
+	t_img	*img_3;
+	t_img	*img_4;
+	t_img	*img_5;
+	t_img	*img_6;
+	t_img	*img_7;
+	t_img	*img_8;
+	t_img	*img_9;
+	int		size_img_bg_x;
+	int		size_img_bg_y;
+	int		size_img_nb_x;
+	int		size_img_nb_y;
+}			t_count;
+
 /**
  * struct s_assets - Contains all the assets' different path.
  */
@@ -65,6 +99,7 @@ typedef struct s_assets {
 	t_img	*img_player;
 	int		img_size;
 	t_walls	*walls;
+	t_count	*count;
 }			t_assets;
 
 /**

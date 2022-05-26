@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:44:58 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 16:18:22 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/26 22:55:35 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,16 @@
  * @param var Variable containing all the other useful ones.
  */
 void		sp_print_background(t_mlx *var);
+
+// ****************************************************************************
+// Functions - sp_background.c
+
+/**
+ * @brief Print the move counter.
+ *
+ * @param var Variable containing all the other useful ones.
+ */
+void		sp_print_count(t_mlx *var);
 
 // ****************************************************************************
 // Functions - sp_player.c
