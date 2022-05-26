@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_io.c                                       :+:      :+:    :+:   */
+/*   sp_items.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/16 14:56:34 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/18 01:39:21 by aguiri           ###   ########.fr       */
+/*   Created: 2022/05/23 11:11:47 by aguiri            #+#    #+#             */
+/*   Updated: 2022/05/26 22:58:17 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	p_open_file(char *file_name)
+void	sp_print_items(t_mlx *var, int x, int y)
 {
-	int	file_fd;
-
-	file_fd = open(file_name, O_RDONLY);
-	if (file_fd == -1)
-		error_put_exit();
-	return (file_fd);
-}
-
-void	p_close_file(int file_fd)
-{
-	int	tmp;
-
-	tmp = close(file_fd);
-	if (tmp == -1)
-		error_put_exit();
-}
-
-void	p_print_map(t_map *map)
-{
-	int	i;
-
-	i = 0;
-	while (i < map->size_y)
-		ft_printf("%s\n", map->array[i++]);
+	if (var->map->array[y][x] == MAP_ITEM)
+	{
+		mlx_put_image_to_window(var->mlx, var->win,
+			var->assets->img_item,
+			x * PXL_SIZE, (y + 2) * PXL_SIZE);
+	}
 }

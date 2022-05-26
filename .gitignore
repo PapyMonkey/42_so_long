@@ -51,10 +51,13 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# Clang
+.cache/
+compile_commands.json 
+
 # Custom rules
 .*.swp
 .DS_Store
 data/rsc/
 data/map/
 so_long
-compile_commands.json 

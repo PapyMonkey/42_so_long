@@ -1,28 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   img_draw.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 17:38:19 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 15:07:53 by aguiri           ###   ########.fr       */
+/*   Created: 2022/05/23 13:57:42 by aguiri            #+#    #+#             */
+/*   Updated: 2022/05/26 23:00:27 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+void	img_draw(t_mlx *var)
 {
-	t_mlx	var;
-	char	*filepath;
+	int		x;
+	int		y;
 
-	var_init(&var, argc, argv);
-	var.win = mlx_new_window(var.mlx, var.win_x, var.win_y, var.win_name);
-	img_draw(&var);
-	mlx_key_hook(var.win, event_main, &var);
-	mlx_hook(var.win, 17, 0, event_redcross, &var);
-	mlx_loop(var.mlx);
-	var_free(&var);
-	return (EXIT_SUCCESS);
+	y = 0;
+	sp_print_background(var);
+	sp_print_count(var);
+	while (y < var->map->size_y)
+	{
+		x = 0;
+		while (x < var->map->size_x)
+		{
+			sp_print_player(var);
+			sp_print_items(var, x, y);
+			x++;
+		}
+		y++;
+	}
+	y = 0;
+	while (y < var->map->size_y)
+	{
+		x = 0;
+		while (x < var->map->size_x)
+			sp_print_walls(var, x++, y);
+		y++;
+	}
 }

@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 17:38:19 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 15:07:53 by aguiri           ###   ########.fr       */
+/*   Created: 2022/05/23 05:46:23 by aguiri            #+#    #+#             */
+/*   Updated: 2022/05/27 00:24:31 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+void	var_init(t_mlx *var, int argc, char **argv)
 {
-	t_mlx	var;
-	char	*filepath;
-
-	var_init(&var, argc, argv);
-	var.win = mlx_new_window(var.mlx, var.win_x, var.win_y, var.win_name);
-	img_draw(&var);
-	mlx_key_hook(var.win, event_main, &var);
-	mlx_hook(var.win, 17, 0, event_redcross, &var);
-	mlx_loop(var.mlx);
-	var_free(&var);
-	return (EXIT_SUCCESS);
+	var->assets = sp_init_assets();
+	var->map = p_main(argc, argv);
+	var->mlx = mlx_init();
+	var->win_x = (var->map->size_x) * PXL_SIZE;
+	var->win_y = (var->map->size_y + 2) * PXL_SIZE;
+	var->win_name = "so_stardew";
+	var->player = pl_init(var);
+	img_load(var);
 }

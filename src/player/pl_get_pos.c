@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   pl_get_pos.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 17:38:19 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 15:07:53 by aguiri           ###   ########.fr       */
+/*   Created: 2022/05/23 03:51:35 by aguiri            #+#    #+#             */
+/*   Updated: 2022/05/23 05:29:04 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+void	pl_get_pos(t_player *player, t_mlx *var)
 {
-	t_mlx	var;
-	char	*filepath;
+	int	x;
+	int	y;
 
-	var_init(&var, argc, argv);
-	var.win = mlx_new_window(var.mlx, var.win_x, var.win_y, var.win_name);
-	img_draw(&var);
-	mlx_key_hook(var.win, event_main, &var);
-	mlx_hook(var.win, 17, 0, event_redcross, &var);
-	mlx_loop(var.mlx);
-	var_free(&var);
-	return (EXIT_SUCCESS);
+	y = 0;
+	while (y < var->map->size_y)
+	{
+		x = 0;
+		while (x < var->map->size_x)
+		{
+			if (var->map->array[y][x] == 'P')
+			{
+				player->pos_x = x;
+				player->pos_y = y;
+				return ;
+			}
+			x++;
+		}
+		y++;
+	}
 }

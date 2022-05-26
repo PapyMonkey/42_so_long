@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close.c                                            :+:      :+:    :+:   */
+/*   p_args_check.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 12:11:31 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/07 07:13:55 by aguiri           ###   ########.fr       */
+/*   Created: 2022/05/16 13:29:38 by aguiri            #+#    #+#             */
+/*   Updated: 2022/05/17 17:34:07 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	event_esc(int key, t_mlx *arg)
+void	p_args_check(int argc, char **argv)
 {
-	if (key == 53)
+	int	len;
+
+	if (argc != 2)
 	{
-		mlx_destroy_window(arg->mlx, arg->win);
-		exit(EXIT_SUCCESS);
+		ft_printf("Mauvais nombre d'arguments.");
+		exit(EXIT_FAILURE);
 	}
-	ft_printf("Key pressed : %d\n", key);
-	return (EXIT_FAILURE);
+	len = ft_strlen(argv[1]);
+	if (len < 5)
+		exit(EXIT_FAILURE);
+	if (ft_strncmp(argv[1] + (len - 4), ".ber", 4))
+	{
+		ft_printf("pas bon les frrrr\n");
+		exit(EXIT_FAILURE);
+	}
 }

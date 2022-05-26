@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_map_size.c                                 :+:      :+:    :+:   */
+/*   p_map_size.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 09:49:52 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/17 23:59:15 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 08:40:47 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+/**
+ * @brief Prints custom error code.
+ */
 static void	p_size_error(void)
 {
 	ft_printf("Error: mauvaise taille de map\n");
 	exit(EXIT_FAILURE);
 }
 
+/**
+ * @brief Gets the length of a given string until the first '\n' character.
+ *
+ * @param str Source string.
+ * @return Length of the string.
+ */
 static int	p_strlen_newline(const char *str)
 {
 	int	i;

@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_check.c                                    :+:      :+:    :+:   */
+/*   p_check.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 00:24:35 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/18 01:56:24 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/23 08:47:38 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
 #include "so_long.h"
 
+/**
+ * @brief Prints custom error code.
+ */
 static void	p_err_wall(void)
 {
 	ft_printf("Error: la carte fournie n'est pas fermee "
@@ -42,6 +45,9 @@ void	p_check_wall(t_map *map)
 	}
 }
 
+/**
+ * @brief Prints custom error code.
+ */
 static void	p_err_map_unknown(char c)
 {
 	ft_printf("Error: la carte fournie contient un caractere incorrect "
@@ -49,6 +55,9 @@ static void	p_err_map_unknown(char c)
 	exit(EXIT_FAILURE);
 }
 
+/**
+ * @brief Prints custom error code.
+ */
 static void	p_err_map_content(t_map *map)
 {
 	if (map->nb_item < 1)

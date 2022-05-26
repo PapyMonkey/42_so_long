@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:58:21 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/17 19:03:12 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 00:24:55 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,84 @@
 # include <mlx.h>
 # include "libft.h"
 
+# include "images.h"
+# include "keycodes.h"
 # include "parsing.h"
+# include "player.h"
+# include "sprites.h"
+# include "structures.h"
+
+# define PXL_SIZE 32
+# define DEBUG_MODE 0
+# define PRINT_MOVES 0
 
 // ****************************************************************************
-// Structures
+// Functions - Events
 
-typedef struct s_mlx {
-	void	*mlx;
-	void	*win;
-}			t_mlx;
+/**
+ * @brief Handle ESC press key and exit the program.
+ *
+ * @param key Key code.
+ * @param var Variable containing all the other useful ones.
+ */
+static void	event_esc(int key, t_mlx *var);
+
+/**
+ * @brief Function to move the player around the map.
+ *
+ * @param key Key code.
+ * @param var Variable containing all the other useful ones.
+ */
+static void	event_move_player(int key, t_mlx *var);
+
+/**
+ * @brief Handle the "click on red-cross" event and exit the program.
+ *
+ * @param var Variable containing all the other useful ones.
+ */
+int			event_redcross(t_mlx *var);
+
+/**
+ * @brief Function to manage all the differents hook events.
+ *
+ * @param key Key code.
+ * @param var Variable containing all the other useful ones.
+ * @return Return 1 if successful, 0 if not.
+ */
+int			event_main(int key, t_mlx *var);
 
 // ****************************************************************************
-// Functions - close.c
+// Functions - Init and free
 
-int		event_esc(int key, t_mlx *arg);
+/**
+ * @brief Initiates the structures needed to run the program.
+ *
+ * @param var Variable that will contain all the other useful ones.
+ * @param argc Number of arguments to the main function.
+ * @param argv Arguments of the main function.
+ */
+void		var_init(t_mlx *var, int argc, char **argv);
+
+/**
+ * @brief Free all the structures needed to run the program.
+ *
+ * @param var Variable containing all the other useful ones.
+ */
+void		var_free(t_mlx *var);
 
 // ****************************************************************************
-// Functions - errors.c
+// Functions - Errors
 
-void	error_put_exit(void);
+/**
+ * @brief Print error code and exit the program.
+ */
+void		err_put_exit(void);
 
-#endif
+/**
+ * @brief Check if all the assets have been loaded correctly.
+ *
+ * @param var Variable containing all the other useful ones.
+ */
+void		err_load_assets(t_mlx *var);
+
+#endif		// ifndef SO_LONG_H
