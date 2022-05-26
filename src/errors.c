@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 14:18:46 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 18:37:46 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 00:45:45 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,24 @@ void	err_put_exit(void)
 }
 
 /**
- * @brief Check if all the walls assets have been loaded correctly.
+ * @brief	Check if all the walls and count module
+ * 			assets have been loaded correctly.
  *
  * @param var Variable containing all the other useful ones.
  */
-static void	err_load_walls(t_mlx *var)
+static void	err_load_walls_and_counts(t_walls *w, t_count *c)
 {
-	if (!var->assets->walls->img_ulr
-		|| !var->assets->walls->img_ul
-		|| !var->assets->walls->img_ur
-		|| !var->assets->walls->img_u
-		|| !var->assets->walls->img_lr
-		|| !var->assets->walls->img_l
-		|| !var->assets->walls->img_r
-		|| !var->assets->walls->img_s)
+	if (!w->img_ulr || !w->img_ul || !w->img_ur || !w->img_u
+		|| !w->img_lr || !w->img_l || !w->img_r || !w->img_s
+		|| !c->img_0 || !c->img_1 || !c->img_2 || !c->img_3
+		|| !c->img_4 || !c->img_5 || !c->img_6 || !c->img_7
+		|| !c->img_8 || !c->img_9)
 		err_put_exit();
 }
 
 void	err_load_assets(t_mlx *var)
 {
-	err_load_walls(var);
+	err_load_walls_and_counts(var->assets->walls, var->assets->count);
 	if (!var->assets->img_background
 		|| !var->assets->img_item
 		|| !var->assets->img_player)
