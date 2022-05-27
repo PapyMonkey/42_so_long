@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 00:19:58 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/27 01:20:30 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 02:12:46 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,18 @@ static void	free_count(t_count *count)
 	free(count->img_8);
 	free(count->img_9);
 	free(count);
+}
+
+static void	free_map(t_map *map)
+{
+	int	n;
+
+	n = 0;
+	while (n < map->size_y)
+		free(map->array[n++]);
+	free(map->array);
+	free(map->fd);
+	free(map);
 }
 
 static void	free_walls(t_walls *walls)
@@ -52,6 +64,6 @@ void	var_free(t_mlx *var)
 	free(var->assets->img_item);
 	free(var->assets->img_player);
 	free(var->assets);
-	free(var->map);
 	free(var->player);
+	free_map(var->map);
 }

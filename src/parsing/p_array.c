@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 19:19:20 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 08:40:14 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 02:16:02 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	p_write_array(t_map *map)
 		if (line == NULL)
 			p_read_error();
 		map->array[y] = p_strdup_newline(line, map->size_x);
+		free(line);
 		y++;
 	}
 }

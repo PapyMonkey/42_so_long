@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 09:49:52 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 08:40:47 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 02:18:15 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	p_get_size(t_map *map)
 		if (map->size_y != 0 && p_strlen_newline(line) != map->size_x)
 			p_size_error();
 		map->size_y++;
+		free(line);
 		line = ft_get_next_line(map->fd[0]);
 	}
 }
