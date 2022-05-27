@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:58:21 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/27 00:24:55 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 02:00:29 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 
 # define PXL_SIZE 32
 # define DEBUG_MODE 0
-# define PRINT_MOVES 0
+# define FRAMES 12
 
 // ****************************************************************************
 // Functions - Events
@@ -56,6 +56,14 @@ static void	event_move_player(int key, t_mlx *var);
  * @param var Variable containing all the other useful ones.
  */
 int			event_redcross(t_mlx *var);
+
+/**
+ * @brief Calculate and change all the idle sprites each frame.
+ *
+ * @param var Variable containing all the other useful ones.
+ * @return Return 1 if successful, 0 if not.
+ */
+int			event_update(t_mlx *var);
 
 /**
  * @brief Function to manage all the differents hook events.

@@ -6,24 +6,11 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 00:19:58 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/27 00:29:30 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 01:20:30 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-static void	free_walls(t_walls *walls)
-{
-	free(walls->img_ulr);
-	free(walls->img_ul);
-	free(walls->img_ur);
-	free(walls->img_u);
-	free(walls->img_lr);
-	free(walls->img_l);
-	free(walls->img_r);
-	free(walls->img_s);
-	free(walls);
-}
 
 static void	free_count(t_count *count)
 {
@@ -41,10 +28,26 @@ static void	free_count(t_count *count)
 	free(count);
 }
 
+static void	free_walls(t_walls *walls)
+{
+	free(walls->img_ulr);
+	free(walls->img_ul);
+	free(walls->img_ur);
+	free(walls->img_u);
+	free(walls->img_lr);
+	free(walls->img_l);
+	free(walls->img_r);
+	free(walls->img_s);
+	free(walls);
+}
+
 void	var_free(t_mlx *var)
 {
-	free_walls(var->assets->walls);
 	free_count(var->assets->count);
+	free_walls(var->assets->walls);
+	free(var->assets->exit->img_awake);
+	free(var->assets->exit->img_idle_1);
+	free(var->assets->exit->img_idle_2);
 	free(var->assets->img_background);
 	free(var->assets->img_item);
 	free(var->assets->img_player);

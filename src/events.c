@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 03:23:50 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 08:17:26 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 02:00:25 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,24 @@ int	event_redcross(t_mlx *var)
 	mlx_clear_window(var->mlx, var->win);
 	mlx_destroy_window(var->mlx, var->win);
 	exit(EXIT_SUCCESS);
+	return (EXIT_SUCCESS);
+}
+
+int	event_update(t_mlx *var)
+{
+	static int	idle_counter;
+
+	idle_counter++;
+	if (var->player->inventory == var->map->nb_item)
+		var->assets->exit->img_current = var->assets->exit->img_awake;
+	else if (idle_counter == var->idle_frames)
+		var->assets->exit->img_current = var->assets->exit->img_idle_2;
+	else if (idle_counter >= var->idle_frames * 2)
+	{
+		var->assets->exit->img_current = var->assets->exit->img_idle_1;
+		idle_counter = 0;
+	}
+	img_draw(var);
 	return (EXIT_SUCCESS);
 }
 

@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:44:58 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/26 22:55:35 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 01:42:29 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 void		sp_print_background(t_mlx *var);
 
 // ****************************************************************************
-// Functions - sp_background.c
+// Functions - sp_count.c
 
 /**
  * @brief Print the move counter.
@@ -36,14 +36,26 @@ void		sp_print_background(t_mlx *var);
 void		sp_print_count(t_mlx *var);
 
 // ****************************************************************************
-// Functions - sp_player.c
+// Functions - sp_exit.c
 
 /**
- * @brief Print the player according to his current position.
+ * @brief Print the exit.
  *
  * @param var Variable containing all the other useful ones.
+ * @param x x position.
+ * @param y y position.
  */
-void		sp_print_player(t_mlx *var);
+void		sp_print_exit(t_mlx *var, int x, int y);
+
+// ****************************************************************************
+// Functions - sp_init_assets.c
+
+/**
+ * @brief Create an assets collection and store it inside a t_assets structure.
+ *
+ * @return Assets structure containing all paths.
+ */
+t_assets	*sp_init_assets(void);
 
 // ****************************************************************************
 // Functions - sp_items.c
@@ -59,14 +71,14 @@ void		sp_print_player(t_mlx *var);
 void		sp_print_items(t_mlx *var, int x, int y);
 
 // ****************************************************************************
-// Functions - sp_init_assets.c
+// Functions - sp_player.c
 
 /**
- * @brief Create an assets collection and store it inside a t_assets structure.
+ * @brief Print the player according to his current position.
  *
- * @return Assets structure containing all paths.
+ * @param var Variable containing all the other useful ones.
  */
-t_assets	*sp_init_assets(void);
+void		sp_print_player(t_mlx *var);
 
 // ****************************************************************************
 // Functions - sp_walls.c
