@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 14:18:46 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/27 00:45:45 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 01:14:04 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ void	err_load_assets(t_mlx *var)
 	err_load_walls_and_counts(var->assets->walls, var->assets->count);
 	if (!var->assets->img_background
 		|| !var->assets->img_item
+		|| !var->assets->exit->img_awake
+		|| !var->assets->exit->img_idle_1
+		|| !var->assets->exit->img_idle_2
 		|| !var->assets->img_player)
 		err_put_exit();
 }

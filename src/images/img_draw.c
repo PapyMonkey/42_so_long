@@ -6,11 +6,18 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 13:57:42 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/26 23:00:27 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 01:43:54 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	img_draw_entities(t_mlx *var, int x, int y)
+{
+	sp_print_player(var);
+	sp_print_items(var, x, y);
+	sp_print_exit(var, x, y);
+}
 
 void	img_draw(t_mlx *var)
 {
@@ -24,11 +31,7 @@ void	img_draw(t_mlx *var)
 	{
 		x = 0;
 		while (x < var->map->size_x)
-		{
-			sp_print_player(var);
-			sp_print_items(var, x, y);
-			x++;
-		}
+			img_draw_entities(var, x++, y);
 		y++;
 	}
 	y = 0;
