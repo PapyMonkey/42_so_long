@@ -6,7 +6,7 @@
 #    By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/30 14:23:25 by aguiri            #+#    #+#              #
-#    Updated: 2022/05/22 00:01:38 by aguiri           ###   ########.fr        #
+#    Updated: 2022/06/20 15:49:00 by aguiri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,8 +82,7 @@ FTFLAGS				:=	-L./$(LIBFT_PATH)\
 						-lft
 
 # MiniLibX
-MLXFLAGS			:=	-L./$(MLX_PATH)\
-						-lmlx\
+MLXFLAGS			:=	-lmlx\
 						-framework OpenGL\
 						-framework AppKit
 
