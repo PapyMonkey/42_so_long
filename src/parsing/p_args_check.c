@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 13:29:38 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/17 17:34:07 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/06/20 15:10:10 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	p_args_check(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	if (ft_strncmp(argv[1] + (len - 4), ".ber", 4))
 	{
-		ft_printf("pas bon les frrrr\n");
+		ft_printf("Map invalide.\n");
 		exit(EXIT_FAILURE);
 	}
 }
