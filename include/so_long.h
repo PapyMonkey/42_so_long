@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:58:21 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/27 02:00:29 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 07:33:59 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <mlx.h>
 # include "libft.h"
 
+# include "enemies.h"
 # include "images.h"
 # include "keycodes.h"
 # include "parsing.h"

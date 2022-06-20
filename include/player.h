@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 03:52:10 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 13:50:58 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 21:18:04 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,17 @@
 // Functions - pl_check.c
 
 /**
- * @brief Check if the cursor is poiting on a exit. Return 1 if it, 0 if not.
+ * @brief Check if the cursor is poiting on an enemy. Return 1 if it, 0 if not.
+ *
+ * @param var Variable containing all the other useful ones.
+ * @param x x position of the cursor.
+ * @param y y position of the cursor.
+ * @return 1 if the cursor is on an enemy, 0 if not.
+ */
+int			pl_check_enemies(t_mlx *var, int x, int y);
+
+/**
+ * @brief Check if the cursor is poiting on an exit. Return 1 if it, 0 if not.
  *
  * @param var Variable containing all the other useful ones.
  * @param x x position of the cursor.

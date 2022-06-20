@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 09:57:48 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/23 17:34:51 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 04:50:51 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # define MAP_ITEM 'C'
 # define MAP_EXIT 'E'
 # define MAP_START 'P'
+# define MAP_VENEMY 'V'
+# define MAP_HENEMY 'H'
 
 // ****************************************************************************
 // Functions - p_array.c

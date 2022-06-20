@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 10:07:35 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/27 01:48:19 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 06:37:16 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,9 @@ t_assets	*sp_init_assets(void)
 	assets->exit = (t_exit *)malloc(sizeof(t_exit));
 	if (!assets->count)
 		err_put_exit();
-	assets->path_player = "assets/exit/gold_chicken_idle_1.xpm";
-	sp_init_walls(assets);
+	assets->path_player = "assets/player/rabbit_down_1.xpm";
 	sp_init_count(assets);
 	sp_init_exit_and_items_and_bg(assets);
+	sp_init_walls(assets);
 	return (assets);
 }
