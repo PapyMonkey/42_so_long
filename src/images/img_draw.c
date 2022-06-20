@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 13:57:42 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/27 01:43:54 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/06/20 12:28:30 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	img_draw(t_mlx *var)
 	y = 0;
 	sp_print_background(var);
 	sp_print_count(var);
+	if (var->map->nb_venemies || var->map->nb_henemies)
+		sp_print_enemy(var);
 	while (y < var->map->size_y)
 	{
 		x = 0;

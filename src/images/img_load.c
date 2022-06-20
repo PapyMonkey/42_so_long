@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:25:45 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/27 01:49:42 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/06/20 12:27:15 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,45 @@ static void	img_load_count(void *mlx, t_count *count)
 			&(count->size_img_nb_x), &(count->size_img_nb_y));
 }
 
+/**
+ * @brief Load enemies sprites XPM image in a t_enemies structure.
+ *
+ * @param var Variable containing all the other useful ones.
+ */
+static void	img_load_enemies(t_mlx *var, t_enemies *e)
+{
+	e->img_down_1 = mlx_xpm_file_to_image(var->mlx, e->path_down_1,
+			&(var->assets->img_size), &(var->assets->img_size));
+	e->img_down_2 = mlx_xpm_file_to_image(var->mlx, e->path_down_2,
+			&(var->assets->img_size), &(var->assets->img_size));
+	e->img_down_3 = mlx_xpm_file_to_image(var->mlx, e->path_down_3,
+			&(var->assets->img_size), &(var->assets->img_size));
+	e->img_left_1 = mlx_xpm_file_to_image(var->mlx, e->path_left_1,
+			&(var->assets->img_size), &(var->assets->img_size));
+	e->img_left_2 = mlx_xpm_file_to_image(var->mlx, e->path_left_2,
+			&(var->assets->img_size), &(var->assets->img_size));
+	e->img_left_3 = mlx_xpm_file_to_image(var->mlx, e->path_left_3,
+			&(var->assets->img_size), &(var->assets->img_size));
+	e->img_right_1 = mlx_xpm_file_to_image(var->mlx, e->path_right_1,
+			&(var->assets->img_size), &(var->assets->img_size));
+	e->img_right_2 = mlx_xpm_file_to_image(var->mlx, e->path_right_2,
+			&(var->assets->img_size), &(var->assets->img_size));
+	e->img_right_3 = mlx_xpm_file_to_image(var->mlx, e->path_right_3,
+			&(var->assets->img_size), &(var->assets->img_size));
+	e->img_up_1 = mlx_xpm_file_to_image(var->mlx, e->path_up_1,
+			&(var->assets->img_size), &(var->assets->img_size));
+	e->img_up_2 = mlx_xpm_file_to_image(var->mlx, e->path_up_2,
+			&(var->assets->img_size), &(var->assets->img_size));
+	e->img_up_3 = mlx_xpm_file_to_image(var->mlx, e->path_up_3,
+			&(var->assets->img_size), &(var->assets->img_size));
+	en_init_current_paths(e);
+}
+
+/**
+ * @brief Load exit, items and background sprites XPM image in structures.
+ *
+ * @param var Variable containing all the other useful ones.
+ */
 static void	img_load_exit_and_items_and_bg(t_mlx *var)
 {
 	var->assets->img_background = mlx_xpm_file_to_image(var->mlx,
@@ -104,5 +143,7 @@ void	img_load(t_mlx *var)
 	img_load_count(var->mlx, var->assets->count);
 	img_load_exit_and_items_and_bg(var);
 	img_load_walls(var);
+	if (var->map->nb_venemies != 0 || var->map->nb_henemies != 0)
+		img_load_enemies(var, var->enemies);
 	err_load_assets(var);
 }

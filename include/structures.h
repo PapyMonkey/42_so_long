@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 04:15:10 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/27 01:35:29 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 07:36:37 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,16 @@ typedef struct s_img {
 	int		line_len;
 	int		endian;
 }			t_img;
+
+/**
+ * struct s_pos - Contains all position informations of a given object.
+ */
+typedef struct s_pos {
+	int		x;
+	int		y;
+	char	dir;
+	t_img	*img_current;
+}			t_pos;
 
 /**
  * struct s_count - Contains all the informations of the counting module 
@@ -125,7 +135,40 @@ typedef struct s_map {
 	int		nb_item;
 	int		nb_exit;
 	int		nb_start;
+	int		nb_venemies;
+	int		nb_henemies;
 }			t_map;
+
+/**
+ * struct s_enemies - Contains all the enemies' informations.
+ */
+typedef struct s_enemies {
+	char	*path_up_1;
+	char	*path_up_2;
+	char	*path_up_3;
+	char	*path_down_1;
+	char	*path_down_2;
+	char	*path_down_3;
+	char	*path_left_1;
+	char	*path_left_2;
+	char	*path_left_3;
+	char	*path_right_1;
+	char	*path_right_2;
+	char	*path_right_3;
+	t_img	*img_up_1;
+	t_img	*img_up_2;
+	t_img	*img_up_3;
+	t_img	*img_down_1;
+	t_img	*img_down_2;
+	t_img	*img_down_3;
+	t_img	*img_left_1;
+	t_img	*img_left_2;
+	t_img	*img_left_3;
+	t_img	*img_right_1;
+	t_img	*img_right_2;
+	t_img	*img_right_3;
+	t_pos	**pos;
+}			t_enemies;
 
 /**
  * struct s_player - Contains all the player's informations.
@@ -149,6 +192,7 @@ typedef struct s_mlx {
 	char		*win_name;
 	t_assets	*assets;
 	t_map		*map;
+	t_enemies	*enemies;
 	t_player	*player;
 }				t_mlx;
 

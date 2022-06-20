@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 16:44:58 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/27 01:42:29 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 21:11:14 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,16 @@ void		sp_print_background(t_mlx *var);
  * @param var Variable containing all the other useful ones.
  */
 void		sp_print_count(t_mlx *var);
+
+// ****************************************************************************
+// Functions - sp_enemies.c
+
+/**
+ * @brief Print the enemies.
+ *
+ * @param var Variable containing all the other useful ones.
+ */
+void		sp_print_enemy(t_mlx *var);
 
 // ****************************************************************************
 // Functions - sp_exit.c
