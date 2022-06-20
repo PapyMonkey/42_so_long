@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 03:23:50 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/27 02:00:25 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/06/20 13:07:55 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,17 @@ int	event_update(t_mlx *var)
 	idle_counter++;
 	if (var->player->inventory == var->map->nb_item)
 		var->assets->exit->img_current = var->assets->exit->img_awake;
-	else if (idle_counter == var->idle_frames)
+	if (idle_counter == var->idle_frames
+		&& var->player->inventory != var->map->nb_item)
 		var->assets->exit->img_current = var->assets->exit->img_idle_2;
 	else if (idle_counter >= var->idle_frames * 2)
 	{
 		var->assets->exit->img_current = var->assets->exit->img_idle_1;
 		idle_counter = 0;
 	}
+	if (idle_counter == var->idle_frames
+		&& (var->map->nb_venemies || var->map->nb_henemies))
+		en_moves(var);
 	img_draw(var);
 	return (EXIT_SUCCESS);
 }

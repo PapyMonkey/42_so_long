@@ -6,7 +6,7 @@
 /*   By: aguiri <aguiri@student.42nice.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 00:19:58 by aguiri            #+#    #+#             */
-/*   Updated: 2022/05/27 01:20:30 by aguiri           ###   ########.fr       */
+/*   Updated: 2022/05/27 07:25:45 by aguiri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,41 @@ static void	free_count(t_count *count)
 	free(count->img_8);
 	free(count->img_9);
 	free(count);
+}
+
+static void	free_enemies(t_enemies *enemies)
+{
+	int	n;
+
+	n = 0;
+	while (enemies->pos[n] != NULL)
+		free(enemies->pos[n++]);
+	free(enemies->pos);
+	free(enemies->img_down_1);
+	free(enemies->img_down_2);
+	free(enemies->img_down_3);
+	free(enemies->img_left_1);
+	free(enemies->img_left_2);
+	free(enemies->img_left_3);
+	free(enemies->img_right_1);
+	free(enemies->img_right_2);
+	free(enemies->img_right_3);
+	free(enemies->img_up_1);
+	free(enemies->img_up_2);
+	free(enemies->img_up_3);
+	free(enemies);
+}
+
+static void	free_map(t_map *map)
+{
+	int	n;
+
+	n = 0;
+	while (n < map->size_y)
+		free(map->array[n++]);
+	free(map->array);
+	free(map->fd);
+	free(map);
 }
 
 static void	free_walls(t_walls *walls)
@@ -52,6 +87,8 @@ void	var_free(t_mlx *var)
 	free(var->assets->img_item);
 	free(var->assets->img_player);
 	free(var->assets);
-	free(var->map);
+	if (var->map->nb_venemies || var->map->nb_henemies)
+		free_enemies(var->enemies);
 	free(var->player);
+	free_map(var->map);
 }
