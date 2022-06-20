@@ -13,4 +13,4 @@
 | **Libft authorized** | `Yes` |
 | **Description** | `You must create a basic 2D game in which a dolphin escapes Earth after eating some fish. Instead of a dolphin, fish, and the Earth, you can use any character, any collectible and any place you want` |
 
-![so_long grade](https://badge42.herokuapp.com/api/project/aguiri/so_long)
+![aguiri's 42 so_long Score](https://badge42.vercel.app/api/v2/cl1m1z528009409l5bo2ovzih/project/2623777)
